@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="container">
+	
+		<div id="box-bar">
+			<div id="health-bar">
+				<div id="lives">
+					<span class="fa fa-heart">3</span>
+				</div>
+				<div>
+					<span class="health-bar active"></span>
+					<span class="health-bar active"></span>
+					<span class="health-bar active"></span>
+				</div>
+			</div>
+			<div id="amo-bar">
+				<span class="fa fa-rocket">150</span>
+			</div>
+			<div id="time-bar">
+				<span class="fa fa-clock-o">00:00</span>
+			</div>
+			<div id="cooldown-bar">
+				<div></div>
+			</div>
+		</div>
+		<canvas id="stage" width="1000" height="800">
+
+		</canvas>
+	</div>
+	<div id="preloader">
+		<span class="spinner-holder">
+			<span class="fa fa-spinner fa-spin fa-5x"></span>
+		</span>
+	</div>
+	<script src="bower_components/EaselJS/lib/easeljs-0.8.2.min.js"></script>
+	<script src="bower_components/PreloadJS/lib/preloadjs-0.6.2.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/resources.js"></script>
+	<script src="js/Behaviors/Observable.js"></script>
+	<script src="js/Behaviors/Movable.js"></script>
+	<script src="js/Behaviors/Synchronizable.js"></script>
+	<script src="js/KeyHandler.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/ResourceLoader.js"></script>
+	<script src="js/GameObject.js"></script>
+	<script src="js/Tank.js"></script>
+	<script src="js/PlayerTank.js"></script>
+	<script src="js/Stage.js"></script>
+	<script src="js/WSClient.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var stage;
+			/**
+			 *
+			 * @type {WSClient}
+             */
+			var socketClient = new WSClient('ws://localhost:5000');
+			stage = new Stage("stage", socketClient)
+			Preloader.init();
+			ResourceLoader.setImages(res).setOnLoadHandler(function() {
+				Preloader.hide();
+				stage.init();
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "tanks",
+  "authors": [
+    "Vasil Atanasov <vsatanasov@gmail.com>"
+  ],
+  "description": "tanks game",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "game",
+    "tanks"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "PreloadJS": "^0.6.2",
+    "EaselJS": "^0.8.2",
+    "font-awesome": "fontawesome#^4.5.0"
+  }
+}

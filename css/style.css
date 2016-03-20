@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+#container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#box-bar {
+	display: inline-block;
+	width: 100%;
+	
+}
+#box-bar > div {
+	width: 24.99%;
+	float: left;
+}
+#health-bar div:last-child {
+	display: inline-block;
+	width: 100%;
+}
+#health-bar div:last-child span {
+	width: 32%;
+	border: 1px solid brown;
+	display: inline-block;
+	float: left;
+	background: lightgrey;
+	height: 20px;
+}
+
+#health-bar div:last-child span.active {
+	background: orange;
+}
+
+#stage {
+	background: url("../assets/images/sand.jpg");
+}
+
+#preloader {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: honeydew;
+	z-index: 5;
+}
+
+#preloader .spinner-holder {
+	visibility: hidden;
+}
+
+.show-spinner {
+	visibility: visible !important;
+	-webkit-animation-name: show-spinner;
+	-moz-animation-name: show-spinner;
+	-o-animation-name: show-spinner;
+	animation-name: show-spinner;
+
+	-webkit-animation-duration: 1.5s;
+	-moz-animation-duration: 1.5s;
+	-o-animation-duration: 1.5s;
+	animation-duration: 1.5s;
+}
+
+@keyframes show-spinner {
+	from { opacity: 0; }
+	to { opacity: 1; }
+
+}
+
+@-webkit-keyframes show-spinner {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
