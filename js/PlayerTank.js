@@ -47,7 +47,7 @@ PlayerTank.prototype.onStageUpdate = function(e) {
 
 	if (this.oldRotation) {
 		this.setDataForSync('shape.rotation', this.getShape().rotation);
-		this.oldRotation = {};
+		this.oldRotation = null;
 	}
 
 	this.write();
